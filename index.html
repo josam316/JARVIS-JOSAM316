@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#050b18">
+  <title>JARVIS | JOSAM316</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <div class="grid-overlay" aria-hidden="true"></div>
+  <header class="topbar">
+    <a class="brand" href="/" aria-label="JARVIS home">
+      <span class="brand-mark">J</span>
+      <span><strong>JARVIS</strong><small>BY JOSAM316</small></span>
+    </a>
+    <div class="top-status"><span class="pulse-dot"></span><span id="systemState">SYSTEM ONLINE</span></div>
+    <button class="icon-button" id="themePulse" title="Toggle interface glow" aria-label="Toggle interface glow">✦</button>
+  </header>
+
+  <main class="shell">
+    <section class="hero">
+      <div class="eyebrow"><span class="line"></span> PERSONAL INTELLIGENCE SYSTEM <span class="line"></span></div>
+      <h1>Good to see you, <span>Josam.</span></h1>
+      <p class="subhead">Your command center is ready. What shall we work on?</p>
+    </section>
+
+    <section class="main-grid">
+      <article class="panel core-panel">
+        <div class="panel-heading">
+          <div><span class="micro-label">CORE INTERFACE</span><h2>JARVIS Core</h2></div>
+          <span class="tag"><span class="pulse-dot"></span> STANDBY</span>
+        </div>
+        <div class="reactor-wrap" aria-label="Decorative animated JARVIS core">
+          <div class="reactor-ring ring-outer"></div>
+          <div class="reactor-ring ring-mid"></div>
+          <div class="reactor-ring ring-inner"></div>
+          <div class="reactor-ticks"></div>
+          <div class="reactor-center"><span class="core-eye"></span><strong>J</strong><small>AI CORE</small></div>
+          <div class="orbit orbit-one"></div><div class="orbit orbit-two"></div>
+        </div>
+        <div class="core-caption"><span class="live-bars"><i></i><i></i><i></i><i></i><i></i></span><span>NEURAL INTERFACE READY</span></div>
+        <div class="core-stats">
+          <div><small>ASSISTANT</small><strong id="assistantStatus">ONLINE</strong></div>
+          <div><small>PHONE LINK</small><strong id="phoneStatus">NOT PAIRED</strong></div>
+          <div><small>OPERATING MODE</small><strong>DEMO</strong></div>
+        </div>
+      </article>
+
+      <article class="panel command-panel">
+        <div class="panel-heading">
+          <div><span class="micro-label">COMMAND INTERFACE</span><h2>Talk to JARVIS</h2></div>
+          <span class="tiny-icon">⌁</span>
+        </div>
+        <div class="chat-window" id="chatWindow" aria-live="polite">
+          <div class="message assistant-message"><span class="message-avatar">J</span><div><small>JARVIS · SYSTEM</small><p>Systems initialized. I am ready to help. This prototype does not yet connect to an AI model or your phone.</p></div></div>
+        </div>
+        <form id="chatForm" class="chat-form">
+          <label class="sr-only" for="commandInput">Enter a message</label>
+          <input id="commandInput" maxlength="500" autocomplete="off" placeholder="Type a command or ask a question…" />
+          <button class="send-button" type="submit" aria-label="Send message">➤</button>
+        </form>
+        <div class="command-hint"><span class="keycap">ENTER</span> to send <span class="hint-divider">/</span> Demo responses only</div>
+        <div class="quick-actions">
+          <button class="quick-action" data-command="Show system status"><span>◈</span> System status</button>
+          <button class="quick-action" data-command="How will phone pairing work?"><span>⌁</span> Pair phone</button>
+          <button class="quick-action" data-command="Show developer tools plan"><span>⌘</span> Developer tools</button>
+        </div>
+      </article>
+    </section>
+
+    <section class="lower-grid">
+      <article class="panel device-panel">
+        <div class="panel-heading">
+          <div><span class="micro-label">DEVICE NETWORK</span><h2>Connected devices</h2></div>
+          <span class="tag tag-muted" id="deviceCount">0 DEVICES</span>
+        </div>
+        <div class="device-card">
+          <div class="device-icon">▯</div><div class="device-info"><strong>Android companion</strong><small id="deviceDescription">Waiting for secure pairing</small></div>
+          <span class="status-pill offline" id="devicePill">OFFLINE</span>
+        </div>
+        <button class="outline-button" id="pairButton"><span>＋</span> Set up phone connection</button>
+        <p class="fine-print">Pairing is a preview only. No pairing code is generated and no phone data is accessed yet.</p>
+      </article>
+
+      <article class="panel activity-panel">
+        <div class="panel-heading">
+          <div><span class="micro-label">SYSTEM TELEMETRY</span><h2>Activity log</h2></div>
+          <span class="tag tag-muted">LOCAL DEMO</span>
+        </div>
+        <div class="activity-list" id="activityList">
+          <div class="activity-row"><span class="activity-dot"></span><div><strong>Dashboard initialized</strong><small>Interface loaded</small></div><time>NOW</time></div>
+          <div class="activity-row"><span class="activity-dot dim"></span><div><strong>Phone bridge unavailable</strong><small>Companion app not connected</small></div><time>INFO</time></div>
+          <div class="activity-row"><span class="activity-dot"></span><div><strong>Security mode enabled</strong><small>Demo actions only</small></div><time>READY</time></div>
+        </div>
+      </article>
+    </section>
+
+    <section class="bottom-strip">
+      <div><span class="shield">⬡</span><span><strong>Privacy-first by design</strong><small>No phone permissions requested by this website.</small></span></div>
+      <span class="version">JOSAM316 / JARVIS UI v0.1.0</span>
+    </section>
+  </main>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="/static/app.js" defer></script>
+</body>
+</html>
